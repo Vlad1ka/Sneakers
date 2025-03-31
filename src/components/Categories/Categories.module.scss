@@ -1,0 +1,28 @@
+.container {
+    margin: 0 0 0 100px;
+    .content {
+        width: 420px;
+        display: flex;
+        justify-content: space-between;
+  
+        p{
+            padding: 15px 30px;
+            border-radius: 20px;
+            border: 1px solid #3D7FC1;
+            font-weight: 900;
+            color: #3D7FC1;
+            cursor: pointer;
+            transition: background-color 0.1s ease-in-out;
+    
+            &:hover {
+                background-color: #3D7FC1;
+                color: #fff;
+            }
+
+            &.active{
+                background-color: #3D7FC1;
+                color: #fff;
+            }
+        }
+    }
+  }

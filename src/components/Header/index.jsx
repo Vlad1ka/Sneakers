@@ -3,8 +3,9 @@ import classes from "./Header.module.scss";
 
 const Header = () => {
   return (
-    <div className={classes.header}>
-        <img className={classes.logo} src="./img/logo.png" alt="logo"/>
+    <div className={classes.container}>
+      <div className={classes.content}>
+        <img className={classes.logo} src="./img/logo.svg" alt="logo"/>
         <div className={classes.search}>
             <input type="text" placeholder="Поиск..."/>
         </div>
@@ -16,7 +17,8 @@ const Header = () => {
             <img src="./img/heart.png" alt="heart"/>
             <p>Избранное</p>
         </div>
-        <hr></hr>
+      </div>
+      <hr/>
     </div>
   )
 }

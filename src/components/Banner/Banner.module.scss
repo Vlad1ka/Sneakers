@@ -1,0 +1,44 @@
+.container{
+    width: 766px;
+    height: 354px;
+    margin: 0 337px 50px 337px;
+
+    img{
+        position: absolute;
+    }
+
+    .content{
+        position: relative;
+        padding: 50px;
+
+        .text{
+            font-size: 30px;
+            font-weight: 900;
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+
+            p:nth-of-type(1){
+                width: 203px;
+            }
+
+            span{
+                color: #3D7FC1;
+            }
+        }
+
+        button{
+            width: 125px;
+            height: 33px;
+            margin: 70px 0 0 0;
+            border: none;
+            background-color: #3D7FC1;
+            color: #fff;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 14px;
+            font-family: Inter;
+            cursor: pointer;
+        }
+    }
+}
