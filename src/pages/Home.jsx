@@ -12,9 +12,11 @@ const Home = () => {
   const [cards, setCards] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
+  const category = categoryId > 0 ? `category=${categoryId}` : '';
+
   React.useEffect(() => {
 
-    fetch(`https://67d349eb8bca322cc269bf17.mockapi.io/items`)
+    fetch(`https://67d349eb8bca322cc269bf17.mockapi.io/items?${category}`)
     .then((res) => {
       return res.json();
     })
@@ -23,7 +25,7 @@ const Home = () => {
       setIsLoading(false);
     });
   window.scrollTo(0, 0);
-  }, []);
+  }, [categoryId]);
 
   if (isLoading){
     return(

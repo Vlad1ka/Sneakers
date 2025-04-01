@@ -13,7 +13,7 @@ const Categories = ({value, onChangeCategory}) => {
                         <p 
                             key={index}
                             onClick={() => onChangeCategory(index)}
-                            className={value === index ? 'active' : ''}>
+                            className={value === index ? classes.active : ''}>
                             {categoryName} </p>
                     ))
                 }

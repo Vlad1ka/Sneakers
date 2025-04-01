@@ -98,6 +98,8 @@
                 padding: 0 0 0 12px;
                 align-items: center;
                 background: url(../../../public/img/plus.svg) no-repeat 10px center;
+                cursor: pointer;
+                user-select: none;
 
                 &:hover{
                     color: #fff;

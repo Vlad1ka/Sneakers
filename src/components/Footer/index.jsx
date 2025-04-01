@@ -6,7 +6,7 @@ const Footer = () => {
     <div className={classes.container}>
         <div className={classes.content}>
             <div>
-                <img src="./img/logo.svg" alt="logo" />
+                <img src="./img/logo.svg" alt="logo"/>
                 <p>Новинки</p>
                 <p>Все кроссовки</p>
             </div>

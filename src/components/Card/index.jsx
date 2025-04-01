@@ -4,6 +4,10 @@ import classes from './Card.module.scss';
 const Card = ({img, title, sizes, price}) => {
 
     const [activeSize, setActiveSize] = React.useState(0);
+    const [cardCount, setCardCount] = React.useState(0);
+    const onClickAdd = () => {
+        setCardCount(cardCount+1)
+    }
 
     return (
         <div className={classes.container}>
@@ -27,10 +31,10 @@ const Card = ({img, title, sizes, price}) => {
                 </div>
                 <div className={classes.buy}>
                     <p className={classes.price}>от {price} ₽</p>
-                    <div className={classes.add}>
+                    <div className={classes.add} onClick={onClickAdd}>
                         <div className={classes.plus}></div>
                         <p>Добавить</p>
-                        <p>0</p>
+                        <p>{cardCount}</p>
                     </div>
                 </div>
             </div>
