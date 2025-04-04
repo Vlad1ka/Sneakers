@@ -5,6 +5,8 @@ import Card from '../components/Card';
 import Footer from '../components/Footer';
 import classes from '../scss/Home.module.scss';
 import Header from '../components/Header';
+import Cart from '../pages/Cart.jsx';
+import { Routes, Route } from 'react-router-dom';
 
 const Home = () => {
 
@@ -13,6 +15,7 @@ const Home = () => {
   const [searchValue, setSearchValue ] = React.useState('');
 
   const [cards, setCards] = React.useState([]);
+  const [cartItems, setCartItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
   const category = categoryId > 0 ? `category=${categoryId}` : '';
@@ -38,6 +41,10 @@ const Home = () => {
     )
   }
 
+  const onAddToCart = (obj) => {
+    setCartItems((cartItems) => [...cartItems, obj]);
+    console.log(obj)
+  }
 
   return (
     <>
@@ -48,9 +55,13 @@ const Home = () => {
       onChangeCategory={(index) => setCategoryId(index)}
     />
     <div className={classes.cards}>
-      {Array.isArray(cards) && cards.map((obj) => <Card key={obj.id} {...obj}/>)}
+      {Array.isArray(cards) && cards.map((obj) => <Card key={obj.id} {...obj} onPlus={onAddToCart}/>)}
     </div>
     <Footer/>
+    {/* <Routes>
+      <Route path="/cart" element={<Cart cartItems={cartItems}/>}/>
+    </Routes> */}
+    <Cart cartItems={cartItems} />
     </>
   )
 }

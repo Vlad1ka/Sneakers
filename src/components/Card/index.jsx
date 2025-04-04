@@ -1,12 +1,14 @@
 import React from 'react';
 import classes from './Card.module.scss';
 
-const Card = ({img, title, sizes, price}) => {
+const Card = ({img, title, sizes, price, onPlus}) => {
 
     const [activeSize, setActiveSize] = React.useState(0);
     const [cardCount, setCardCount] = React.useState(0);
+    // const [cartItems, setCartItems] = React.useState([]);
     const onClickAdd = () => {
-        setCardCount(cardCount+1)
+        onPlus({img, title, price});
+        setCardCount(cardCount+1);
     }
 
     return (
@@ -31,7 +33,7 @@ const Card = ({img, title, sizes, price}) => {
                 </div>
                 <div className={classes.buy}>
                     <p className={classes.price}>от {price} ₽</p>
-                    <div className={classes.add} onClick={onClickAdd}>
+                    <div className={classes.add} onClick={onPlus} onClick={onClickAdd}>
                         <div className={classes.plus}></div>
                         <p>Добавить</p>
                         <p>{cardCount}</p>
