@@ -12,7 +12,7 @@ const Footer = () => {
             </div>
             <div className={classes.text}>
                 <p>Контакты</p>
-                <p>г.Стерлитамак, Октября пр-т, д. 36</p>
+                <p>г. Стерлитамак, Октября пр-т, д. 36</p>
                 <p>+7 (999) 999-99-99</p>
                 <p>info@sneakers.ru</p>
             </div>

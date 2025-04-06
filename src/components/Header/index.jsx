@@ -2,7 +2,7 @@ import React from 'react';
 import classes from "./Header.module.scss";
 import { useNavigate } from 'react-router-dom';
 
-const Header = ({searchValue, setSearchValue}) => {
+const Header = ({searchValue, setSearchValue, onClickCart}) => {
 
   const navigate = useNavigate();
 
@@ -21,7 +21,8 @@ const Header = ({searchValue, setSearchValue}) => {
             placeholder="Поиск..."
             />
         </div>
-        <div className={classes.cart} onClick={() => navigate('/cart')}>
+        {/* <div className={classes.cart} onClick={() => navigate('/cart')}> */}
+        <div className={classes.cart} onClick={onClickCart}>
             <img src="./img/cart.svg" alt="cart"/>
             <p>1205 руб.</p>
         </div>

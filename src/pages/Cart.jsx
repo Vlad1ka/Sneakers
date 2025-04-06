@@ -1,51 +1,55 @@
 import React from 'react';
 import classes from '../scss/Cart.module.scss';
-import Header from '../components/Header';
 
-const Cart = ({cartItems}) => {
+const Cart = ({cartItems, onIncrease, onDecrease, onRemove,onClear}) => {
+
+  // Функция для подсчета общего количества товаров
+  const totalQuantity = cartItems.reduce((total, item) => total + item.cardCount, 0);
+
+  // Функция для подсчета общей стоимости
+  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.cardCount, 0);
 
   return (
     <div>
-      <Header/>
       <div className={classes.container}>
         <div className={classes.text}>
           <div className={classes.title}>
             <img src="./img/cart.png" alt="cart" />
             <p>Корзина</p>
           </div>
-          <div className={classes.clear}>
-            <img src="./img/trash.svg" alt="trash" />
+          <div className={classes.clear} onClick={onClear}>
+            <img src="./img/trash.svg" alt="trash"/>
             <p>Очистить корзину</p>
           </div>
         </div>
         <div className={classes.cards}>
-          {Array.isArray(cartItems) && cartItems.map(({id, img, title, price}) => (
+          {Array.isArray(cartItems) && cartItems.map(({id, img, title, price, cardCount, size}) => (
             <div className={classes.card} key={id}>
             <hr />
             <div className={classes.card_content}>
               <img className={classes.img} src={img} alt="img" />
               <div className={classes.card_text}>
                 <p>{title}</p>
-                <p>SIZE</p>
+                <p>{size}</p>
               </div>
               <div className={classes.quantity}>
-                <img src="./img/minus.png" alt="minus" />
-                <p>2</p>
-                <img src="./img/plus.png" alt="plus" />
+                <img src="./img/minus.png" alt="minus" onClick={() => onDecrease(title, size)}/>
+                <p>{cardCount}</p>
+                <img src="./img/plus.png" alt="plus" onClick={()=> onIncrease(title, size)}/>
               </div>
               <div className={classes.price}>
-                <p>{price} ₽</p>
+                <p>{price*cardCount} ₽</p>
               </div>
               <div className={classes.delete}>
-                <img src="./img/delete.png" alt="delete" />
+                <img src="./img/delete.png" alt="delete" onClick={() => onRemove(title, size)}/>
               </div>
             </div>
           </div>
           ))}
         </div>
         <div className={classes.total}>
-          <p>Всего кроссовок: <span>HIJIBOJFCHO</span></p>
-          <p>Сумма заказа: <span>ывгоарыоароы</span></p>
+          <p>Всего кроссовок: <span>{totalQuantity} шт.</span></p>
+          <p>Сумма заказа: <span>{totalPrice} ₽</span></p>
         </div>
         <div className={classes.buttons}>
           <button>

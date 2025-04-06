@@ -5,9 +5,8 @@ const Card = ({img, title, sizes, price, onPlus}) => {
 
     const [activeSize, setActiveSize] = React.useState(0);
     const [cardCount, setCardCount] = React.useState(0);
-    // const [cartItems, setCartItems] = React.useState([]);
     const onClickAdd = () => {
-        onPlus({img, title, price});
+        onPlus({img, title, price, cardCount, size: sizes[activeSize]});
         setCardCount(cardCount+1);
     }
 
@@ -33,7 +32,7 @@ const Card = ({img, title, sizes, price, onPlus}) => {
                 </div>
                 <div className={classes.buy}>
                     <p className={classes.price}>от {price} ₽</p>
-                    <div className={classes.add} onClick={onPlus} onClick={onClickAdd}>
+                    <div className={classes.add} onClick={onClickAdd}>
                         <div className={classes.plus}></div>
                         <p>Добавить</p>
                         <p>{cardCount}</p>
