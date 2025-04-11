@@ -10,7 +10,6 @@ const Banner = () => {
                 <p>Royal University <span>Blue Silk</span></p>
                 <p>Nike & Clot</p>
             </div>
-            <button>КУПИТЬ</button>
         </div>
     </div>
   )

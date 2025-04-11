@@ -1,13 +1,19 @@
 import React from 'react';
 import classes from '../scss/Cart.module.scss';
+import { useCart } from '../components/CartProvider'; 
+import { useNavigate } from 'react-router-dom';
 
-const Cart = ({cartItems, onIncrease, onDecrease, onRemove,onClear}) => {
+const Cart = () => {
+
+  const { cartItems, onIncrease, onDecrease, onRemove, onClear } = useCart();
 
   // Функция для подсчета общего количества товаров
   const totalQuantity = cartItems.reduce((total, item) => total + item.cardCount, 0);
 
   // Функция для подсчета общей стоимости
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.cardCount, 0);
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -52,11 +58,11 @@ const Cart = ({cartItems, onIncrease, onDecrease, onRemove,onClear}) => {
           <p>Сумма заказа: <span>{totalPrice} ₽</span></p>
         </div>
         <div className={classes.buttons}>
-          <button>
+          <button onClick={() => navigate('/')}>
             <img src="./img/arrow-back.svg" alt="back" />
             Вернуться назад
           </button>
-          <button>Оплатить сейчас</button>
+          <button onClick={() => alert("Ваш заказ оформлен!")}>Оплатить сейчас</button>
         </div>
       </div>
     </div>

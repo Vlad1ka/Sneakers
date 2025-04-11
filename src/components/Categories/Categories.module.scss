@@ -1,5 +1,10 @@
 .container {
     margin: 0 0 0 100px;
+
+    .burgerButton{
+        display: none;
+    }
+
     .content {
         width: 420px;
         display: flex;
@@ -25,4 +30,99 @@
             }
         }
     }
-  }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 25px 0 0 400px;
+
+        .content {
+            width: 210px;
+      
+            p{
+                padding: 7px 15px;
+                border-radius: 10px;
+                border: 0.5px solid #3D7FC1;
+                font-size: 8px;
+        
+                &:hover {
+                    background-color: #3D7FC1;
+                    color: #fff;
+                }
+    
+                &.active{
+                    background-color: #3D7FC1;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 25px 0 0 400px;
+
+        .content {
+            width: 210px;
+      
+            p{
+                padding: 7px 15px;
+                border-radius: 10px;
+                border: 0.5px solid #3D7FC1;
+                font-size: 8px;
+        
+                &:hover {
+                    background-color: #3D7FC1;
+                    color: #fff;
+                }
+    
+                &.active{
+                    background-color: #3D7FC1;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        width: 320px;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding: 0 0 0 10px;
+
+        .burgerButton{
+            display: block;
+            width: 15px;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .contentBurger{
+            p{
+                width: 32px;
+                padding: 4px 5px;
+                border-radius: 10px;
+                border: 0.5px solid #3D7FC1;
+                font-size: 5px;
+                color: #3D7FC1;
+                margin: 2px 0 0 0;
+                text-align: center;
+        
+                &:hover {
+                    background-color: #3D7FC1;
+                    color: #fff;
+                }
+    
+                &.active{
+                    background-color: #3D7FC1;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

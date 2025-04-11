@@ -6,6 +6,7 @@
 
     .content{
         display: flex;
+        justify-content: space-between;
         align-items: center;
 
         .logo{
@@ -39,33 +40,171 @@
                 cursor: pointer;
             }
         }
-
-        .cart{
-            width: 95px;
+        .right{
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-left: 160px;
-            font-size: 14px;
-            color: #5C5C5C;
-            font-weight: 600;
-            cursor: pointer;
-        }
 
-        .favorite{
-            width: 105px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-left: 28px;
-            font-size: 14px;
-            color: #5C5C5C;
-            cursor: pointer;
+            .cart{
+                width: 95px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-left: 160px;
+                font-size: 14px;
+                color: #5C5C5C;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            .favorite{
+                width: 105px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-left: 28px;
+                font-size: 14px;
+                color: #5C5C5C;
+                cursor: pointer;
+            }
         }
     }
 
     hr{
         border: 1px solid #EAEAEA;
         margin: 16px 0 0 0;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .container{
+        width: 661px;
+        height: 48px;
+        margin: 0 auto;
+        margin-top: 16px;
+        margin-bottom: 21px;
+
+        .content{
+    
+            .logo{
+                width: 103px;
+                height: 32px;
+            }
+    
+            .search{
+                margin-left: 217px;
+    
+                input{
+                    width: 133px;
+                    height: 24px;
+                    border: 0.5px solid #3D7FC1;
+                    border-radius: 5px;
+                    padding: 7px 0px 7px 25px;
+                    font-size: 7px;
+                    background: url(../../../public/img/search.svg) no-repeat 9px center;
+                    background-size: 7px;
+                    
+                }
+    
+                .close{
+                    width: 15px;
+                    margin: 6px 0 0 112px;
+                }
+            }
+            .right{
+    
+                .cart{
+                    width: 50px;
+                    margin-left: 85px;
+                    font-size: 7px;
+
+                    img{
+                        width: 9px;
+                    }
+                }
+    
+                .favorite{
+                    width: 56px;
+                    margin-left: 14px;
+                    font-size: 7px;
+
+                    img{
+                        width: 12px;
+                    }
+                }
+            }
+        }
+    
+        hr{
+            border: 1px solid #EAEAEA;
+            margin: 16px 0 0 0;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .container{
+        width: 300px;
+        height: 24px;
+        margin: 0 auto;
+        margin-top: 8px;
+        margin-bottom: 10px;
+
+        .content{
+            align-items: center;
+            .logo{
+                width: 52px;
+                height: 20px;
+            }
+    
+            .search{
+                height: 30px;
+                margin-left: 90px;
+    
+                input{
+                    width: 66px;
+                    height: 12px;
+                    border: 0.25px solid #3D7FC1;
+                    border-radius: 2.5px;
+                    padding: 3.5px 0px 3.5px 12px;
+                    font-size: 4px;
+                    background: url(../../../public/img/search.svg) no-repeat 4.5px center;
+                    background-size: 3.5px;
+
+                }
+    
+                .close{
+                    width: 7.5px;
+                    margin: 11px 0 0 55px;
+                }
+            }
+            .right{
+    
+                .cart{
+                    width: 25px;
+                    margin-left: 20px;
+                    font-size: 4px;
+
+                    img{
+                        width: 4px;
+                    }
+                }
+    
+                .favorite{
+                    width: 28px;
+                    margin-left: 7px;
+                    font-size: 4px;
+
+                    img{
+                        width: 6px;
+                    }
+                }
+            }
+        }
+    
+        hr{
+            border: 0.5px solid #EAEAEA;
+            margin: 8px 0 0 0;
+        }
     }
 }

@@ -3,22 +3,19 @@ import Banner from '../components/Banner';
 import Categories from '../components/Categories';
 import Card from '../components/Card';
 import Footer from '../components/Footer';
+import { useCart } from '../components/CartProvider.jsx';
+import { useSearch } from '../components/SearchProvider.jsx';
 import classes from '../scss/Home.module.scss';
-import Header from '../components/Header';
-import Cart from '../pages/Cart.jsx';
-import { Routes, Route } from 'react-router-dom';
+import { useFavorite } from '../components/FavoriteProvider.jsx';
 
 const Home = () => {
-  const [cartOpened, setCartOpened] = React.useState(false);
 
+  const { searchValue } = useSearch();
+  const { onAddToCart } = useCart();
+  const { onAddToFavorite} = useFavorite();
   const [categoryId, setCategoryId] = React.useState(0);
-
-  const [searchValue, setSearchValue ] = React.useState('');
-
   const [cards, setCards] = React.useState([]);
-  const [cartItems, setCartItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
-
   const category = categoryId > 0 ? `category=${categoryId}` : '';
   const search = searchValue ? `&search=${searchValue}` : "";
 
@@ -42,62 +39,17 @@ const Home = () => {
     )
   }
 
-  const onAddToCart = (obj) => {
-    setCartItems((cartItems) => {
-      const existingItem = cartItems.find(item => item.title === obj.title && item.size === obj.size);
-      if (existingItem) {
-        // Если товар уже существует, увеличиваем его количество
-        return cartItems.map(item =>
-          item.title === obj.title && item.size === obj.size ? { ...item, cardCount: item.cardCount + 1 } : item
-        );
-      }
-      // Если товара нет, добавляем его с cardCount = 1
-      return [...cartItems, { ...obj, cardCount: 1 }];
-    })};
-
-
-    const onIncrease = (title, size) => {
-      setCartItems((cartItems) => 
-        cartItems.map(item => 
-          item.title === title && item.size === size ? { ...item, cardCount: item.cardCount + 1 } : item
-        )
-      );
-    };
-  
-    const onDecrease = (title, size) => {
-      setCartItems((cartItems) => 
-        cartItems.map(item => 
-          item.title === title && item.size === size 
-            ? { ...item, cardCount: Math.max(item.cardCount - 1, 1) } : item
-        )
-      );
-    };
-  
-    const onRemove = (title, size) => {
-      setCartItems((cartItems) => cartItems.filter(item => !(item.title === title && item.size === size)));
-    };
-
-
-
-
-
-
-  const onClear = () => {
-    setCartItems([]);
-  };
 
 
   return (
     <>
-    <Header searchValue={searchValue} setSearchValue={setSearchValue} onClickCart={() => setCartOpened(true)}/>
-    {cartOpened ? <Cart cartItems={cartItems} onIncrease={onIncrease} onDecrease={onDecrease} onRemove={onRemove} onClear={onClear}/> : null}
     <Banner/>
     <Categories
       value={categoryId}
       onChangeCategory={(index) => setCategoryId(index)}
     />
     <div className={classes.cards}>
-      {Array.isArray(cards) && cards.map((obj) => <Card key={obj.id} {...obj} onPlus={onAddToCart}/>)}
+      {Array.isArray(cards) && cards.map((obj) => <Card key={obj.id} {...obj} onPlus={onAddToCart} onFavorite={onAddToFavorite}/>)}
     </div>
     <Footer/>
     </>

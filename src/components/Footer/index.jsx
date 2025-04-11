@@ -5,16 +5,19 @@ const Footer = () => {
   return (
     <div className={classes.container}>
         <div className={classes.content}>
-            <div>
+            <div className={classes.logo}>
                 <img src="./img/logo.svg" alt="logo"/>
-                <p>Новинки</p>
-                <p>Все кроссовки</p>
+                {/* <p>Новинки</p>
+                <p>Все кроссовки</p> */}
             </div>
             <div className={classes.text}>
                 <p>Контакты</p>
                 <p>г. Стерлитамак, Октября пр-т, д. 36</p>
                 <p>+7 (999) 999-99-99</p>
+            </div>
+            <div className={classes.text}>
                 <p>info@sneakers.ru</p>
+                <p>@sneakers</p>
             </div>
         </div>
         <hr />

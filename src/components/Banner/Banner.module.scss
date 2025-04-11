@@ -26,19 +26,37 @@
                 color: #3D7FC1;
             }
         }
+    }
+}
 
-        button{
-            width: 125px;
-            height: 33px;
-            margin: 70px 0 0 0;
-            border: none;
-            background-color: #3D7FC1;
-            color: #fff;
-            border-radius: 20px;
-            font-weight: 900;
-            font-size: 14px;
-            font-family: Inter;
-            cursor: pointer;
+@media (max-width: 768px) {
+    .container{
+        width: 408px;
+        height: 189px;
+        margin: 0 0 50px 0;
+        margin: 0 auto;
+
+        img{
+            width: 408px;
+            height: 189px;
         }
+    
+        .content{
+            padding: 26px;
+    
+            .text{
+                font-size: 16px;
+    
+                p:nth-of-type(1){
+                    width: 83px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .container{
+        display: none;
     }
 }

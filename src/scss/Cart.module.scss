@@ -137,3 +137,237 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .container{
+        width: 768px;
+        padding: 50px 135px 0 177px;
+        margin: 0 auto;
+    
+        .text{
+            width: 417px;
+    
+            .title{
+                width: 92px;
+                font-size: 17px;
+
+                img{
+                    width: 15px;
+                }
+            }
+    
+            .clear{
+                width: 90px;
+                font-size: 8px;
+
+                img{
+                    width: 10px;
+                }
+            }
+        }
+    
+        .cards{
+            margin: 15px 0 0 0;
+    
+            .card{
+    
+                hr{
+                    width: 418px;
+                    border: 0.5px solid #F4F4F4;
+                }
+    
+                .card_content{
+                    width: 418px;
+                    margin: 22px 0 0 0;
+    
+                    .img{
+                        width: 50px;
+                        height: 42px;
+                    }
+    
+                    .card_text{
+                        width: 153px;
+    
+                        p:nth-of-type(1){
+                            height: 19px;
+                            font-size: 8px;
+                        }
+    
+                        p:nth-of-type(2){
+                            font-size: 9px;
+                        }  
+                    }
+    
+                    .quantity{
+                        width: 51px;
+                        font-size: 11px;
+
+                        img{
+                            height: 17px;
+                        }
+                    }
+    
+                    .price{
+                        font-size: 11px;
+                        margin: 15px 0 0 0;
+                    }
+    
+                    .delete{
+                        margin: 15px 0 0 0;
+
+                        img{
+                            width: 17px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .total{
+            margin: 50px 0 0 0;
+            font-size: 11px;
+        }
+    
+        .buttons{
+            margin: 20px 0 0 0;
+    
+            button{
+                width: 105px;
+                height: 27px;
+                border-radius: 15px;
+            }
+    
+            button:nth-of-type(1){
+                border: 0.5px solid #D3D3D3;
+                font-size: 8px;
+                background: none;
+    
+                img{
+                    width: 5px;
+                    margin: 0 10px 0 0;  
+                }
+            }
+    
+            button:nth-of-type(2){
+                font-size: 8px;
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .container{
+        width: 320px;
+        padding: 10px 10px 0 10px;
+        margin: 0 auto;
+    
+        .text{
+            width: 300px;
+    
+            .title{
+                width: 64px;
+                font-size: 11px;
+
+                img{
+                    width: 10px;
+                }
+            }
+    
+            .clear{
+                width: 58px;
+                font-size: 5px;
+
+                img{
+                    width: 7px;
+                }
+            }
+        }
+    
+        .cards{
+            margin: 10px 0 0 0;
+    
+            .card{
+    
+                hr{
+                    width: 300px;
+                    border: 0.5px solid #F4F4F4;
+                }
+    
+                .card_content{
+                    width: 300px;
+                    margin: 15px 0 0 0;
+    
+                    .img{
+                        width: 33px;
+                        height: 27px;
+                    }
+    
+                    .card_text{
+                        width: 106px;
+    
+                        p:nth-of-type(1){
+                            height: 14px;
+                            font-size: 6px;
+                        }
+    
+                        p:nth-of-type(2){
+                            font-size: 6px;
+                        }  
+                    }
+    
+                    .quantity{
+                        width: 35px;
+                        font-size: 7px;
+
+                        img{
+                            height: 11px;
+                        }
+                    }
+    
+                    .price{
+                        font-size: 7px;
+                        margin: 10px 0 0 0;
+                    }
+    
+                    .delete{
+                        margin: 5px 0 0 0;
+
+                        img{
+                            width: 11px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .total{
+            margin: 15px 0 0 0;
+            font-size: 7px;
+        }
+    
+        .buttons{
+            margin: 14px 0 0 0;
+    
+            button{
+                width: 73px;
+                height: 20px;
+                border-radius: 10px;
+            }
+    
+            button:nth-of-type(1){
+                border: 0.5px solid #D3D3D3;
+                font-size: 6px;
+                background: none;
+    
+                img{
+                    width: 4px;
+                    margin: 0 3px 0 0;  
+                }
+            }
+    
+            button:nth-of-type(2){
+                font-size: 6px;
+            }
+        }
+    }
+}
